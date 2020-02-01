@@ -44,7 +44,7 @@ module.exports.register = (req, res, next) => {
         description: description,
         email: email,
         gender: gender,
-        image: file ? req.file.url : null,
+        image: file ? req.file.url : '/img/undefined.png',
         interest: interest,
         name: name,
         password: password
