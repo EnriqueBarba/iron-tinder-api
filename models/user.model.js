@@ -26,12 +26,10 @@ const userSchema = new mongoose.Schema (
               required: true
             }
         },
-        gender: {type: boolean, required: true}, // true - mujer 
+        gender: {type: Boolean, required: true}, // true - mujer 
         interest: {type: String, enum: GENDER, required: true }, 
-        ageRange: {
-                    minAge: {type: Number},
-                    maxAge: {type: Number}
-                },
+        minAge: {type: Number},
+        maxAge: {type: Number},
         image: {type: String, default: '/img/undefined.png' }, //(url cloudinary)
         password: {type: String, required: true}, //bcrypt
         description: {type: String, default: ''}
