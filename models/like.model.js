@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const likesSchema = new mongoose(
+const likesSchema = new mongoose.Schema(
   {
     fromUser: {
       type: mongoose.Schema.Types.ObjectId,
@@ -13,7 +13,7 @@ const likesSchema = new mongoose(
       required: true      
     },
     status: {
-      type: boolean,
+      type: Boolean,
       required: true}
   }, {
     timestamps: true,
@@ -29,5 +29,5 @@ const likesSchema = new mongoose(
   }
 )
 
-const Like = moongose.model('Likes', likesSchema)
+const Likes = new mongoose.model('Likes', likesSchema);
 module.exports = Likes;

@@ -1,11 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const matchs = require('matchs.controller.js');
-const authMiddleware = require('../middlewares/auth.middleware')
+const baseController = require('../controllers/controller');
+const userController = require('../controllers/user.controller');
+const likeController = require('../controllers/like.controller');
+const authMiddleware = require('../middlewares/auth.middleware');
 const upload = require('./cloudinary.config');
 
 
-router.get('/', controller.base);
+router.get('/', baseController.base);
 
 //USERS
 router.post('/user/register', userController.register)
@@ -13,10 +15,6 @@ router.post('/user/register', userController.register)
 //LIKES
 router.post('/user/:id/:status', likeController.like);
 
-//MATCHS
-
-router.get('/matchs', matchsController.do);
-router.post('/matchs', matchsController.create);
 
 
 
