@@ -11,6 +11,8 @@ router.get('/', baseController.base);
 
 //USERS
 router.post('/register', userController.register)
+router.post('/login', userController.login)
+router.post('/logout', userController.logout)
 
 //LIKES
 router.post('/user/:id/:status', likeController.like);

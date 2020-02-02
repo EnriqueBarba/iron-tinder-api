@@ -11,6 +11,7 @@ const userSchema = new mongoose.Schema (
         email: {
             type: String,
             required: true,
+            unique:true,
             match: [EMAIL_PATTERN, 'Email is invalid']
         },
         age: {type: Number, required: true, min: 18 },  //  >= 18
