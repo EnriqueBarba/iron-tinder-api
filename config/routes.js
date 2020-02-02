@@ -10,7 +10,7 @@ const upload = require('./cloudinary.config');
 router.get('/', baseController.base);
 
 //USERS
-router.post('/register', userController.register)
+router.post('/register', upload.single('image'), userController.register)
 router.post('/login', userController.login)
 router.post('/logout', userController.logout)
 
